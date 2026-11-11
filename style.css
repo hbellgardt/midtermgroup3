@@ -1,0 +1,118 @@
+/* Include padding and borders in the declared width so boxes fit the page. */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+  color: #85b8df;
+  background-color: #021324;
+  max-width: 100rem;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+h1 {
+  color: #f8fafb;
+}
+
+/* A comma shares one rule across several heading types. */
+h1, h2, h3 {
+  line-height: 1.2;
+}
+
+/* Both accounts match this shared class. */
+.account {
+  background-color: white;
+  border: 1px solid #697a86;
+  border-right: 0;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+}
+
+/* This deliberately gives the first account more visual prominence. */
+.featured {
+  background-color: #fbfafa;
+  border-left: 6px solid #007c8a;
+}
+
+#question {
+  color: #204f70;
+  font-style: italic;
+  text-align: center;
+}
+
+.note {
+  font-size: 0.95rem;
+  color: #697a86;
+}
+
+a {
+  color: #8d1300;
+}
+
+/* Pointer and keyboard users both receive feedback on the source links. */
+a:hover, a:focus-visible {
+  text-decoration-thickness: 3px;
+}
+
+/* Keep the current link visible to someone navigating with the keyboard. */
+:focus-visible {
+  outline: 3px solid #8a3500;
+  outline-offset: 3px;
+}
+
+/* Start with one column so a small screen keeps a sensible reading order. */
+.layout1 {
+  display: grid;
+  gap: 1.5rem;
+  align-items: start;
+}
+.content-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.side-panel {
+  background-color: white;
+  border: 1px solid #5d7c91;
+  border-left: 0;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px #0000001a;
+  margin-bottom: 1rem;
+  
+}
+
+.side-panel2 {
+  background-color: white;
+  border: 1px solid #5d7c91;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px #0000001a;
+}
+
+.side-panel3 {
+  background-color: white;
+  border: 1px solid #5d7c91;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px #0000001a;
+}
+.side-panel, .side-panel2, .side-panel3 {
+  background-color: white;
+  border: 1px solid #5d7c91;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px #0000001a;
+  height: 60vh;
+}
+
+/* At 48rem and wider, share space in a 2:1 ratio; allow both columns to shrink. */
+@media (min-width: 48rem) {
+  .layout1 {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  }
+}
